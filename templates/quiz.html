@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  {% extends "navbar.html" %}
+  {% block content %}
+    <head>
+      
+      <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+        <style>
+            button{
+                margin-right: 20px;
+            }
+            
+            h3,h5{
+                text-align:center;
+            }
+            
+            .form-row{
+                margin-left: auto;
+                margin-right: auto;
+                width: 60%;
+            }
+            audio{
+                margin-top: 20px;
+                margin-bottom: 50px;
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .Q_number{
+                margin-top: 50px;
+                margin-bottom: 20px;
+                vertical-align: middle;
+            }
+            #submit{
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+            }
+           .alert{
+               width: 60%;
+               margin-right: auto;
+               margin-left: auto;
+           }
+           button{
+             margin-bottom: 20px;
+           }
+           #era{
+             margin-bottom：50px;
+           }
+           #next{
+             border-radius: 50%;
+           }
+        </style>
+    </head>
+    <script>
+      var data = {{data|tojson}} 
+      
+    </script>
+    <body>
+        
+        <div class='container'>
+          
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" id ='progressbar' role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+
+            <h3 class='Q_number'>Question <span id='number'></span>    <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="next question" id='next'>&raquo</button></h3>
+            <h5 id='question'>Listen to the audio below, and select its song name, composer and era<h5>
+            
+            
+            <form>
+            <div class="form-group row form-row" id='options'>
+                <select id='title' class="form-control" >
+                  <option>Select Song Name</option>
+                 
+                  
+                </select>
+                
+              </div>
+
+              <div class="form-group row form-row">
+                <select id='composer' class="form-control" >
+                  <option>Select Composer</option>
+                  
+                </select>
+              </div>
+
+
+              <div class="form-group row form-row">
+                <select id='era' class="form-control" >
+                  <option>Select Era</option>
+                  
+
+                </select>
+              </div>
+              <button type="submit" class="btn btn-outline-primary" id='submit'>Submit</button>
+              
+            </form> 
+            
+        </div>
+    </body>
+    
+    {% endblock %}
+</html>

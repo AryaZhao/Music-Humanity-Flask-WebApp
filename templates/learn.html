@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!-- <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+        
+        
+        <style>
+           
+           h5{
+               
+               margin-top: 20px;
+               margin-bottom: 20px;
+           }
+        </style>
+    </head>
+    
+    <body>
+      {% extends "navbar.html" %}
+      {% block content %}
+      <script>
+        var data = {{data|tojson}} 
+      </script> 
+      <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+        <div class='container'>
+            <h5>Select a music piece and explore it by watching its video and learning its era, composer, characteristics and background information.</h5>
+            <div class="list-group" id = 'title_list'>
+             
+            </div>
+            
+           
+        </div>
+        {% endblock %}
+    </body>
+    
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  {% extends "navbar.html" %}
+  {% block content %}
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+        <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script> -->
+        
+        <style>
+            button{
+                margin-right: 20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        <div class='container'>
+            
+            <p>Explore music pieces from Renaissance to Post-Modernism. <br>
+              Learn more about some music included in Columbia University Music Humanity course.</p>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Learn</h5>
+                      <p class="card-text">video, name, composer, era, characteristics, background</p>
+                      <a href="http://127.0.0.1:5000/learn" class="btn btn-light">Go to Learn</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Quiz</h5>
+                      <p class="card-text">Listen to music and identify its name, composer, and era</p>
+                      <a href="http://127.0.0.1:5000/quiz" class="btn btn-light">Take a Quiz</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+               
+           
+            
+        </div>
+    </body>
+    {% endblock %}
+</html>

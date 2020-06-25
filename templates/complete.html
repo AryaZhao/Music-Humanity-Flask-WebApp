@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  {% extends "navbar.html" %}
+  {% block content %}
+    <head>
+      
+      <script type="text/javascript" src="{{ url_for('static', filename = 'complete.js') }}"></script>
+        <style>
+           
+            h5{
+                text-align:center;
+                margin-bottom: 20px;
+            }
+            #redo{
+                display: block;
+                margin-left: auto;
+                margin-right:auto;
+                
+            }
+        </style>
+    </head>
+    <script>
+      var data = {{data|tojson}} 
+      
+    </script>
+    <body>
+        
+        <div class='container'>
+          <h5 id='msg'></h5>
+          <button type="button" class="btn btn-outline-primary" id='redo'>Redo Quiz</button>
+       
+        </div>
+    </body>
+    
+    {% endblock %}
+</html>

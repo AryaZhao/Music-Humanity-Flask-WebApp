@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    {% extends "navbar.html" %}
+    {% block content %}
+    <head>
+        
+        <script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
+        
+        <style>
+            button{
+                margin-right: 20px;
+            }
+            
+            iframe{
+                margin-bottom: 20px;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                
+            }
+            
+           
+        </style>
+    </head>
+    <script>
+        var data = {{data|tojson}} 
+    </script>
+    <body>
+        
+        <div class='container '>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center" id='pager'>
+                  <li class="page-item" id='prev'><a class="page-link" id='prev_link' >Previous</a></li>
+                  
+                  <li class="page-item" id='next'><a class="page-link" id='next_link'>Next</a></li>
+                </ul>
+            </nav>
+            <h3 id='title'></h3>
+            
+            <p><strong>Composer: </strong><span id='composer'></span></p>
+            <p><strong>Year: </strong><span id='year'></span></p>
+            <p><strong>Era: </strong><span id='era'></span></p>
+            
+            <p><strong>Background: </strong><br>
+                <span id='background'></span>
+            </p>
+             
+            
+        </div>
+    </body>
+    
+    {% endblock %}
+</html>
